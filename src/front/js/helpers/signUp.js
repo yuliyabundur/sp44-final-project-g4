@@ -18,7 +18,7 @@ export const signUp = async (event, initialObject = {}, type, userImage) => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    myHeaders.append("Access-Control-Allow-Origin", "https://silver-xylophone-x6q9jqjwr67hvqxr-3001.app.github.dev");
+    myHeaders.append("Access-Control-Allow-Origin", "https://fuzzy-space-broccoli-v9gjv4jgv552p79j-3001.app.github.dev");
 
 
 
@@ -31,6 +31,7 @@ export const signUp = async (event, initialObject = {}, type, userImage) => {
         method: 'POST',
         headers: myHeaders,
         body: raw,
+        mode: 'no-cors',
         redirect: 'follow'
     };
 
