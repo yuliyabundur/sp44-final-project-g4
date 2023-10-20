@@ -20,15 +20,15 @@ const MapComponent = ( { type } ) => {
     const [ API_KEY ] = useState( '6EQmKaS0rvlVuV87v1aZ ' );
 
     useEffect( () => {
-        if ( type === "vet" ) {
+        if( type === "vet" ) {
             professionalList.current = vets;
             registeredProfessional.current = JSON.parse( localStorage.getItem( "vets" ) );
         }
-        else if ( type === "walker" ) {
+        else if( type === "walker" ) {
             professionalList.current = walkers;
             registeredProfessional.current = JSON.parse( localStorage.getItem( "walkers" ) );
         }
-        else if ( type === "groomer" ) {
+        else if( type === "groomer" ) {
             professionalList.current = groomers;
             registeredProfessional.current = JSON.parse( localStorage.getItem( "groomers" ) );
         }
@@ -53,7 +53,7 @@ const MapComponent = ( { type } ) => {
 
 
 
-        professionalList.current.forEach( professional => {
+        professionalList.current?.forEach( professional => {
             const popup = new maplibregl.Popup( { offset: 25 } ).setHTML(
                 `<div className="card text-center">
                     <div className="card-header">
@@ -82,7 +82,7 @@ const MapComponent = ( { type } ) => {
 
         } );
 
-        registeredProfessional.current.forEach( professional => {
+        registeredProfessional.current?.forEach( professional => {
             const popup = new maplibregl.Popup( { offset: 25 } ).setHTML(
                 `
             <strong>Name:</strong> ${ professional.name, professional.last_name }

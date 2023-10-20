@@ -1,18 +1,28 @@
-import React from 'react';
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from 'react';
 
-export const signUp = async ( event, initialObject = {}, type, userImage ) => {
+import { useNavigate } from "react-router-dom";
+import { Context } from '../store/appContext';
+
+export const signUp = async (event, initialObject = {}, type, userImage) => {
+
+
+
+    const backend = localStorage.getItem("url") + "api/"
+
+
     initialObject.avatar = userImage;
 
     const myHeaders = new Headers();
-    myHeaders.append( "Content-Type", "application/json" );
-    myHeaders.append( "Access-Control-Allow-Origin", "https://miniature-trout-9rqg9vgq9jv2p959-3001.preview.app.github.dev" );
+    myHeaders.append("Content-Type", "application/json");
+
+    myHeaders.append("Access-Control-Allow-Origin", "hhttps://fuzzy-space-broccoli-v9gjv4jgv552p79j-3001.app.github.dev");
 
 
-    console.log( initialObject );
-    const raw = JSON.stringify( {
+
+    console.log(initialObject);
+    const raw = JSON.stringify({
         ...initialObject
-    } );
+    });
 
     const requestOptions = {
         method: 'POST',
@@ -22,26 +32,26 @@ export const signUp = async ( event, initialObject = {}, type, userImage ) => {
     };
 
     try {
-        const res = await fetch( `https://miniature-trout-9rqg9vgq9jv2p959-3001.preview.app.github.dev/api/signup/${ type }`, requestOptions );
+        const res = await fetch(`${backend}signup/${type}`, requestOptions);
 
-        if ( !res.ok ) {
-            throw new Error( "Failed to fetch data, status code: 400" + res.status );
+        if (!res.ok) {
+            throw new Error("Failed to fetch data, status code: 400" + res.status);
         }
 
         const data = await res.json();
 
-        if ( data.code == 501 ) {
-            alert( data.msg );
+        if (data.code == 501) {
+            alert(data.msg);
         }
 
-        console.log( data );
+        console.log(data);
         return data;
 
 
-    } catch ( error ) {
-        throw new Error( error );
+    } catch (error) {
+        throw new Error(error);
     } finally {
 
-        console.log( "Data fetch operation completed" );
+        console.log("Data fetch operation completed");
     }
 };
