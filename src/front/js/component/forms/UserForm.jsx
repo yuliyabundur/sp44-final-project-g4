@@ -53,7 +53,7 @@ export const UserForm = () => {
 
                 <main className="form-signin">
                     <form onSubmit={ handleSubmit }>
-                        <img className="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
+                        <img className="mb-4" src="" alt="" width="72" height="57" />
                         <h1 className="h3 mb-3 fw-normal">Sign Up</h1>
                         <ImageUpload getImageUrl={ handleImage } />
                         <div className="form-floating mb-2">

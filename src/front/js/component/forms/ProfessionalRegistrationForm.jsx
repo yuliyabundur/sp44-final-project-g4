@@ -122,7 +122,7 @@ export const ProfessionalForm = () => {
                                     type="password"
                                     className="form-control"
                                     id="password"
-                                    minlength="8"
+                                    minLength="8"
                                     required />
                                 <div className="invalid-tooltip">
                                     Please choose a unique and valid email.
@@ -214,7 +214,7 @@ export const ProfessionalForm = () => {
                             </div>
                         </div>
                         <div className="col-md-2 position-relative">
-                            <label htmlFor="priceLow" className="form-label">Price Low</label>
+                            <label htmlFor="priceLow" className="form-label">Price High</label>
                             <div className="input-group has-validation">
                                 <span className="input-group-text" id="priceLowSymbol">$</span>
                                 <input
