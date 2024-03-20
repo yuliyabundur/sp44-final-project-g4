@@ -12,13 +12,13 @@ export const signUp = async (event, initialObject = {}, type, userImage) => {
 
     initialObject.avatar = userImage;
 
-    
+
     const res = await fetch(`${backend}signup/${type}`, requestOptions);
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    myHeaders.append("Access-Control-Allow-Origin", "https://silver-xylophone-x6q9jqjwr67hvqxr-3001.app.github.dev/");
+    myHeaders.append("Access-Control-Allow-Origin", "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/");
 
 
 

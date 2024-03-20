@@ -26,7 +26,7 @@ const injectContext = PassedComponent => {
 			state.actions.getAllProfessionals()
 				.then(data => console.log(data));
 
-			localStorage.setItem("url", "https://silver-xylophone-x6q9jqjwr67hvqxr-3001.app.github.dev/")
+			localStorage.setItem("url", "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/")
 
 		}, []);
 

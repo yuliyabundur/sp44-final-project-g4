@@ -1,32 +1,32 @@
 import React from 'react';
 
-export const FavoriteBadge = ( { userId, professionalId, type } ) => {
+export const FavoriteBadge = ({ userId, professionalId, type }) => {
     const backend = "https://sample-service-name-9dn1.onrender.com/api/";
 
     const handleFavorite = () => {
         const myHeaders = new Headers();
-        myHeaders.append( "Content-Type", "application/json" );
-        myHeaders.append( "Access-Control-Allow-Origin", "*" );
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Access-Control-Allow-Origin", "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/");
 
         let raw;
 
-        if ( type === "vet" ) {
-            const rawContent = JSON.stringify( {
+        if (type === "vet") {
+            const rawContent = JSON.stringify({
                 "user_id": userId,
                 "vet_id": professionalId
-            } );
+            });
             raw = rawContent;
-        } else if ( type === "walker" ) {
-            const rawContent = JSON.stringify( {
+        } else if (type === "walker") {
+            const rawContent = JSON.stringify({
                 "user_id": userId,
                 "walker_id": professionalId
-            } );
+            });
             raw = rawContent;
-        } else if ( type === "groomer" ) {
-            const rawContent = JSON.stringify( {
+        } else if (type === "groomer") {
+            const rawContent = JSON.stringify({
                 "user_id": userId,
                 "groomer_id": professionalId
-            } );
+            });
             raw = rawContent;
         }
 
@@ -37,13 +37,13 @@ export const FavoriteBadge = ( { userId, professionalId, type } ) => {
             redirect: 'follow'
         };
 
-        fetch( `${ backend }favorite/${ userId }/${ type }`, requestOptions )
-            .then( response => {
-                console.log( userId, professionalId, type );
+        fetch(`${backend}favorite/${userId}/${type}`, requestOptions)
+            .then(response => {
+                console.log(userId, professionalId, type);
                 return response.json();
-            } )
-            .then( result => console.log( result ) )
-            .catch( error => console.log( 'error', error ) );
+            })
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
     };
 
     return (
@@ -51,9 +51,9 @@ export const FavoriteBadge = ( { userId, professionalId, type } ) => {
             <div clasName="container ">
                 <h6>Save in Favorites</h6>
                 <button
-                    onClick={ handleFavorite }
+                    onClick={handleFavorite}
                     type="button"
-                    className="btn btn-outline-warning mb-3"><i className="fa-solid fa-star fa-lg" style={ { color: "#f1d801" } }></i></button>
+                    className="btn btn-outline-warning mb-3"><i className="fa-solid fa-star fa-lg" style={{ color: "#f1d801" }}></i></button>
             </div>
 
         </>

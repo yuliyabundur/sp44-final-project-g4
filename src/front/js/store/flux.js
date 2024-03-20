@@ -1,5 +1,5 @@
 
-const backend = "https://silver-xylophone-x6q9jqjwr67hvqxr-3001.app.github.dev/";
+const backend = "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/";
 
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -56,8 +56,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						setStore({ vets: data[0].results });
-						setStore({ vets: data[1].results });
-						setStore({ vets: data[2].results });
+						setStore({ groomers: data[1].results });
+						setStore({ walkers: data[2].results });
 						localStorage.setItem("vets", JSON.stringify(data[0].results));
 						localStorage.setItem("groomers", JSON.stringify(data[1].results));
 						localStorage.setItem("walkers", JSON.stringify(data[2].results));

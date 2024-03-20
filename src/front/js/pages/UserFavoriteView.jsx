@@ -57,7 +57,7 @@ export const UserFavoriteView = () => {
 
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "*");
+        myHeaders.append("Access-Control-Allow-Origin", "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/");
 
         const requestOptions = {
             method: 'GET',
@@ -94,7 +94,7 @@ export const UserFavoriteView = () => {
                 data.favWalker.forEach(fav => {
                     const myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
-                    myHeaders.append("Access-Control-Allow-Origin", "*");
+                    myHeaders.append("Access-Control-Allow-Origin", "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/");
 
 
                     const requestOptions = {
@@ -117,7 +117,7 @@ export const UserFavoriteView = () => {
                 data.favGroomer.forEach(fav => {
                     const myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
-                    myHeaders.append("Access-Control-Allow-Origin", "*");
+                    myHeaders.append("Access-Control-Allow-Origin", "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/");
 
 
                     const requestOptions = {
@@ -142,7 +142,7 @@ export const UserFavoriteView = () => {
                 data.favVet.forEach(fav => {
                     const myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
-                    myHeaders.append("Access-Control-Allow-Origin", "*");
+                    myHeaders.append("Access-Control-Allow-Origin", "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/");
 
 
                     const requestOptions = {

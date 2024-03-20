@@ -6,33 +6,31 @@ import { useForm } from "../hooks/useForm.jsx";
 import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
-    const { store, actions } = useContext( Context );
-    const { formState, onResetForm, onInputChange, email, password } = useForm( {
+    const { store, actions } = useContext(Context);
+    const { formState, onResetForm, onInputChange, email, password } = useForm({
         email: '',
         password: ''
-    } );
+    });
     const navigate = useNavigate();
 
-    const handleSubmit = ( event ) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        signIn( event, formState )
-            .then( data => {
-                // For development only.
-                if ( data.code === 501 ) {
-                    alert( data.msg );
+        signIn(event, formState)
+            .then(data => {
+                // Verificar si data está definido y tiene la propiedad code
+                if (data && data.code === 501) {
+                    alert(data.msg);
                 } else {
-                    store.loggedUser.push( data );
-                    console.log( store );
-                    navigate( "/" );
-
+                    store.loggedUser.push(data);
+                    console.log(store);
+                    navigate("/");
                 }
-            } );
-
+            });
     };
 
-    useEffect( () => {
+    useEffect(() => {
 
-    }, [ store.loggedUser ] );
+    }, [store.loggedUser]);
 
 
     return (
@@ -40,14 +38,14 @@ export const LoginForm = () => {
 
             <div className="container w-25 mt-5">
                 <main className="form-signin">
-                    <form onSubmit={ handleSubmit }>
+                    <form onSubmit={handleSubmit}>
                         <img className="mb-4" src="https://img.freepik.com/free-vector/cute-dog-cat-friend-cartoon_138676-2432.jpg?w=2000" alt="" width="72" height="57" />
                         <h1 className="h3 mb-3 fw-normal">Sign In</h1>
                         <div className="form-floating mb-2">
                             <input
                                 name="email"
-                                value={ email }
-                                onChange={ onInputChange }
+                                value={email}
+                                onChange={onInputChange}
                                 type="email"
                                 className="form-control"
                                 id="floatingInput"
@@ -57,8 +55,8 @@ export const LoginForm = () => {
                         <div className="form-floating mb-2">
                             <input
                                 name="password"
-                                value={ password }
-                                onChange={ onInputChange }
+                                value={password}
+                                onChange={onInputChange}
                                 type="password"
                                 className="form-control"
                                 id="floatingPassword"

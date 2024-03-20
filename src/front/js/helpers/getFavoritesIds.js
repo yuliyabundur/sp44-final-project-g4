@@ -6,7 +6,7 @@ export const getFavoritesIds = (userId) => {
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Access-Control-Allow-Origin", "*");
+    myHeaders.append("Access-Control-Allow-Origin", "https://probable-space-parakeet-r9vrjvjg7jvf59jx-3001.app.github.dev/");
 
     const requestOptions = {
         method: 'GET',
